@@ -16,7 +16,6 @@ public class BancoDePalavras {
         }
         leitor.close();
         int indiceAleatorio = random.nextInt(palavras.size());
-        String palavraAleatoria = palavras.get(indiceAleatorio);
-        return palavraAleatoria;
+        return palavras.get(indiceAleatorio);
     }
 }
