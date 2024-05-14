@@ -4,22 +4,19 @@ import java.util.List;
 import java.util.Random;
 
 public class BancoDePalavras {
-
+    Random random = new Random();
+    List<String> palavras = new ArrayList<>();
 
     public String retornarPalavra() throws IOException {
-
         BufferedReader leitor = new BufferedReader(new FileReader("src/main/resources/palavras.txt"));
         String lerLinhas = leitor.readLine();
-        List<String> palavras = new ArrayList<>();
         while(lerLinhas != null){
             palavras.add(lerLinhas);
             lerLinhas = leitor.readLine();
         }
         leitor.close();
-
-        Random rand = new Random();
-        int randomIndex = rand.nextInt(palavras.size());
-        String palavraAleatoria = palavras.get(randomIndex);
+        int indiceAleatorio = random.nextInt(palavras.size());
+        String palavraAleatoria = palavras.get(indiceAleatorio);
         return palavraAleatoria;
     }
 }
