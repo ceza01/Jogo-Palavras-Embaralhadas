@@ -1,15 +1,16 @@
 import java.io.IOException;
+import java.util.Scanner;
 
 public class Principal {
-    public static void main(String[] args) throws IOException {
-        BancoDePalavras bancoDePalavras = new BancoDePalavras();
-        InverterString inverterString = new InverterString();
-        EmbaralharLetras embaralharLetras = new EmbaralharLetras();
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("-------JOGO DAS PALAVRAS EMBARALHADAS-------");
+        System.out.println("Iniciar jogo?");
+        String iniciarJogo = scanner.nextLine();
 
-        String palavra = bancoDePalavras.retornarPalavra();
-        System.out.println(palavra);
-        System.out.println(inverterString.embaralhar(palavra));
+        if (iniciarJogo.toLowerCase() == "sim" || iniciarJogo.toLowerCase() == "s"){
 
+        }
     }
 
 }

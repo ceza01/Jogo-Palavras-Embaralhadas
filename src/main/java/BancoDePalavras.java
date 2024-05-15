@@ -7,7 +7,11 @@ public class BancoDePalavras {
     Random random = new Random();
     List<String> palavras = new ArrayList<>();
 
-    public String retornarPalavra() throws IOException {
+    public BancoDePalavras() throws IOException {
+        lerPalavras();
+    }
+
+    public void lerPalavras() throws IOException {
         BufferedReader leitor = new BufferedReader(new FileReader("src/main/resources/palavras.txt"));
         String lerLinhas = leitor.readLine();
         while(lerLinhas != null){
@@ -15,6 +19,9 @@ public class BancoDePalavras {
             lerLinhas = leitor.readLine();
         }
         leitor.close();
+    }
+
+    public String retornarPalavra() {
         int indiceAleatorio = random.nextInt(palavras.size());
         return palavras.get(indiceAleatorio);
     }
