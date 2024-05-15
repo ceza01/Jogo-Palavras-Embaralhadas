@@ -4,7 +4,7 @@ public class FabricaEmbaralhadores {
 
     public static final Random RANDOM = new Random();
 
-    public Embaralhador getEmbaralhadorAleatorio(){
+    public static Embaralhador getEmbaralhadorAleatorio(){
         int escolha = RANDOM.nextInt(2);
 
         switch(escolha){
