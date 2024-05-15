@@ -1,12 +1,16 @@
 import java.io.IOException;
 
 public class Principal {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
         BancoDePalavras bancoDePalavras = new BancoDePalavras();
-        try {
-            System.out.println(bancoDePalavras.retornarPalavra());
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+        InverterString inverterString = new InverterString();
+        EmbaralharLetras embaralharLetras = new EmbaralharLetras();
+
+        String palavra = bancoDePalavras.retornarPalavra();
+        System.out.println(palavra);
+        System.out.println(inverterString.embaralhar(palavra));
+
     }
+
+
 }
