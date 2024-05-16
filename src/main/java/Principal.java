@@ -9,11 +9,11 @@ public class Principal {
         String iniciarJogo = scanner.nextLine();
 
         if (iniciarJogo.toLowerCase().equals("sim") || iniciarJogo.toLowerCase().equals("s")){
-           System.out.println("Deseja jogar o Modo Fácil ou Morte Súbita? " + "(Digite 1 para Modo Fácil, 2 para Morte " + "Súbita)");
+           System.out.println("Deseja jogar o Modo Com Vidas ou Morte Súbita? " + "(Digite 1 para Modo Fácil, 2 para Morte " + "Súbita)");
            int opcao = scanner.nextInt();
            switch (opcao) {
                case 1:
-                    modoFacil();
+                    modoComVidas();
                case 2:
                     morteSubita();
            }
@@ -24,14 +24,26 @@ public class Principal {
         }
     }
 
-    public static void modoFacil(){
+    public static void modoComVidas(){
+        Scanner scanner = new Scanner(System.in);
         MecanicaDoJogo mecanicaDoJogo = new FabricaMecanicaDoJogo().getMecanicaDoJogo(1);
         while(!mecanicaDoJogo.jogoAcabou()) {
             mecanicaDoJogo.jogar();
-            System.out.println("A palavra embaralhada é: " + mecanicaDoJogo.jogoAcabou());
+            System.out.println("A palavra embaralhada é: " + mecanicaDoJogo.getPalavraEmbaralhada());
+            System.out.println("Digite a sua tentativa: ");
+            String palavra = scanner.nextLine();
+            if (mecanicaDoJogo.verificarAcerto(palavra)) {
+                System.out.println("Você acertou! Sua pontuação atual é: " + mecanicaDoJogo.getPontuacao());
+            } else {
+                System.out.println("Você errou! Tente novamente. Você ainda tem " + mecanicaDoJogo.getVidas() + " vidas.");
+                if (mecanicaDoJogo.getVidas() == 0) {
+                    System.out.println("Suas vidas acabaram. O jogo terminou. Sua pontuação final foi: " + mecanicaDoJogo.getPontuacao());
+                    System.exit(1);
+                }
+            }
         }
-
-
+        System.out.println("O jogo terminou. Sua pontuação final foi: " + mecanicaDoJogo.getPontuacao());
+        scanner.close();
     }
 
     public static void morteSubita(){

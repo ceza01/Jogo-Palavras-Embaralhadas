@@ -3,7 +3,7 @@ import java.io.IOException;
 public class JogoComVidas implements MecanicaDoJogo{
     private BancoDePalavras bancoDePalavras;
     private Embaralhador embaralhador;
-    private int vidas;
+    private int vidas = 3;
     private int pontuacao;
     private String palavraAtual;
     private boolean jogoAcabou;
@@ -14,7 +14,6 @@ public class JogoComVidas implements MecanicaDoJogo{
             bancoDePalavras = new BancoDePalavras();
             palavraAtual = bancoDePalavras.retornarPalavra();
             embaralhador = FabricaEmbaralhadores.getEmbaralhadorAleatorio();
-            vidas = 3;
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -52,4 +51,14 @@ public class JogoComVidas implements MecanicaDoJogo{
     public String getPalavraEmbaralhada() {
         return embaralhador.embaralhar(palavraAtual);
     }
+
+    public int getPontuacao() {
+        return pontuacao;
+    }
+
+    @Override
+    public int getVidas() {
+        return vidas;
+    }
 }
+

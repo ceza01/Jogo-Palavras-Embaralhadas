@@ -5,4 +5,6 @@ public interface MecanicaDoJogo {
     boolean verificarAcerto(String palavra);
     String getPalavraEmbaralhada();
     void proximaPalavra();
+    int getPontuacao();
+    int getVidas();
 }
