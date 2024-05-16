@@ -1,11 +1,8 @@
-import java.io.IOException;
 import java.util.Scanner;
 
 public class Principal {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        FabricaMecanicaDoJogo fabricaMecanicaDoJogo = new FabricaMecanicaDoJogo();
-        FabricaEmbaralhadores fabricaEmbaralhadores;
 
         System.out.println("-------JOGO DAS PALAVRAS EMBARALHADAS-------");
         System.out.println("Iniciar jogo?");
@@ -19,7 +16,6 @@ public class Principal {
                     modoFacil();
                case 2:
                     morteSubita();
-
            }
         } else {
             System.out.println("Encerrando o jogo...");
@@ -29,11 +25,17 @@ public class Principal {
     }
 
     public static void modoFacil(){
-        // TODO
+        MecanicaDoJogo mecanicaDoJogo = new FabricaMecanicaDoJogo().getMecanicaDoJogo(1);
+        while(!mecanicaDoJogo.jogoAcabou()) {
+            mecanicaDoJogo.jogar();
+            System.out.println("A palavra embaralhada é: " + mecanicaDoJogo.jogoAcabou());
+        }
+
+
     }
 
     public static void morteSubita(){
-        // TODO
+        MecanicaDoJogo mecanicaDoJogo = new FabricaMecanicaDoJogo().getMecanicaDoJogo(1);
     }
 
 }
