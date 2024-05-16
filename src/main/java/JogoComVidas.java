@@ -12,6 +12,7 @@ public class JogoComVidas implements MecanicaDoJogo{
     public void jogar() {
         try {
             bancoDePalavras = new BancoDePalavras();
+            palavraAtual = bancoDePalavras.retornarPalavra();
             embaralhador = FabricaEmbaralhadores.getEmbaralhadorAleatorio();
             vidas = 3;
         } catch (IOException e) {
