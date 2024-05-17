@@ -8,7 +8,7 @@ public class Principal {
         System.out.println("Iniciar jogo?");
         String iniciarJogo = scanner.nextLine();
 
-        if (iniciarJogo.toLowerCase().equals("sim") || iniciarJogo.toLowerCase().equals("s")){
+        if (iniciarJogo.equalsIgnoreCase("sim") || iniciarJogo.equalsIgnoreCase("s")){
            System.out.println("Deseja jogar o Modo com Vidas ou Morte Súbita? " + "(Digite 1 para Modo com Vidas, 2 para Morte " + "Súbita)");
            int opcao = scanner.nextInt();
            switch (opcao) {
@@ -35,15 +35,17 @@ public class Principal {
             if (mecanicaDoJogo.verificarAcerto(palavra)) {
                 System.out.println("Você acertou! Sua pontuação atual é: " + mecanicaDoJogo.getPontuacao());
             } else {
-                System.out.println("Você errou! Tente novamente. Você ainda tem " + mecanicaDoJogo.getVidas() + " vidas.");
                 if (mecanicaDoJogo.getVidas() == 0) {
                     System.out.println("Suas vidas acabaram. O jogo terminou. Sua pontuação final foi: " + mecanicaDoJogo.getPontuacao());
                     System.exit(1);
+                } else {
+                    System.out.println("Você errou! Tente novamente. Você ainda tem " + mecanicaDoJogo.getVidas() + " vidas.");
                 }
             }
         }
         System.out.println("O jogo terminou. Você atingiu a pontuação máxima: " + mecanicaDoJogo.getPontuacao() + " pontos");
         scanner.close();
+        System.exit(1);
     }
 
     public static void morteSubita(){
@@ -62,6 +64,6 @@ public class Principal {
         }
         System.out.println("O jogo terminou. Sua pontuação final foi: " + mecanicaDoJogo.getPontuacao() + " pontos");
         scanner.close();
+        System.exit(1);
     }
-
 }
