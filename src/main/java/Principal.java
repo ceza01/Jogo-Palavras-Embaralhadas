@@ -9,7 +9,7 @@ public class Principal {
         String iniciarJogo = scanner.nextLine();
 
         if (iniciarJogo.toLowerCase().equals("sim") || iniciarJogo.toLowerCase().equals("s")){
-           System.out.println("Deseja jogar o Modo Com Vidas ou Morte Súbita? " + "(Digite 1 para Modo Fácil, 2 para Morte " + "Súbita)");
+           System.out.println("Deseja jogar o Modo com Vidas ou Morte Súbita? " + "(Digite 1 para Modo com Vidas, 2 para Morte " + "Súbita)");
            int opcao = scanner.nextInt();
            switch (opcao) {
                case 1:
@@ -42,12 +42,26 @@ public class Principal {
                 }
             }
         }
-        System.out.println("O jogo terminou. Sua pontuação final foi: " + mecanicaDoJogo.getPontuacao());
+        System.out.println("O jogo terminou. Você atingiu a pontuação máxima: " + mecanicaDoJogo.getPontuacao() + " pontos");
         scanner.close();
     }
 
     public static void morteSubita(){
-        MecanicaDoJogo mecanicaDoJogo = new FabricaMecanicaDoJogo().getMecanicaDoJogo(1);
+        Scanner scanner = new Scanner(System.in);
+        MecanicaDoJogo mecanicaDoJogo = new FabricaMecanicaDoJogo().getMecanicaDoJogo(2);
+        while(!mecanicaDoJogo.jogoAcabou()) {
+            mecanicaDoJogo.jogar();
+            System.out.println("A palavra embaralhada é: " + mecanicaDoJogo.getPalavraEmbaralhada());
+            System.out.println("Digite a sua tentativa: ");
+            String palavra = scanner.nextLine();
+            if (mecanicaDoJogo.verificarAcerto(palavra)) {
+                System.out.println("Você acertou! Sua pontuação atual é: " + mecanicaDoJogo.getPontuacao());
+            } else {
+                System.out.println("Você perdeu!");
+            }
+        }
+        System.out.println("O jogo terminou. Sua pontuação final foi: " + mecanicaDoJogo.getPontuacao() + " pontos");
+        scanner.close();
     }
 
 }
