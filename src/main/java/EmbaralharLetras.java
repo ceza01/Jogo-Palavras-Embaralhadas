@@ -3,6 +3,7 @@ import java.util.Collections;
 import java.util.List;
 
 public class EmbaralharLetras implements Embaralhador{
+
     @Override
     public String embaralhar(String palavra) {
         List<Character> letras = new ArrayList<>();

@@ -1,5 +1,3 @@
-import java.util.Random;
-
 public class FabricaMecanicaDoJogo {
 
     public MecanicaDoJogo getMecanicaDoJogo(int escolha) {

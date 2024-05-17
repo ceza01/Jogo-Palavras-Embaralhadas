@@ -6,10 +6,10 @@ paleta
 gancho
 retrato
 estacionamento
-coro
+gato
 ferro
 jornalistas
-sede
+urbano
 urgente
 fita
 labirinto

@@ -27,6 +27,11 @@ public class Principal {
     public static void modoComVidas(){
         Scanner scanner = new Scanner(System.in);
         MecanicaDoJogo mecanicaDoJogo = new FabricaMecanicaDoJogo().getMecanicaDoJogo(1);
+
+        System.out.println("--------MODO COM VIDAS------------");
+        System.out.println("--------VOCÊ TEM 3 VIDAS----------");
+        System.out.println("--------PONTUAÇÃO MÁXIMA: 20------");
+
         while(!mecanicaDoJogo.jogoAcabou()) {
             mecanicaDoJogo.jogar();
             System.out.println("A palavra embaralhada é: " + mecanicaDoJogo.getPalavraEmbaralhada());
@@ -43,7 +48,8 @@ public class Principal {
                 }
             }
         }
-        System.out.println("O jogo terminou. Você atingiu a pontuação máxima: " + mecanicaDoJogo.getPontuacao() + " pontos");
+
+        System.out.println("Você ganhou. Você atingiu a pontuação máxima: " + mecanicaDoJogo.getPontuacao() + " pontos");
         scanner.close();
         System.exit(1);
     }
@@ -51,6 +57,11 @@ public class Principal {
     public static void morteSubita(){
         Scanner scanner = new Scanner(System.in);
         MecanicaDoJogo mecanicaDoJogo = new FabricaMecanicaDoJogo().getMecanicaDoJogo(2);
+
+        System.out.println("--------MORTE SÚBITA--------------");
+        System.out.println("--------ERROU, PERDEU-------------");
+        System.out.println("--------PONTUAÇÃO MÁXIMA: 50------");
+
         while(!mecanicaDoJogo.jogoAcabou()) {
             mecanicaDoJogo.jogar();
             System.out.println("A palavra embaralhada é: " + mecanicaDoJogo.getPalavraEmbaralhada());
@@ -62,6 +73,7 @@ public class Principal {
                 System.out.println("Você perdeu!");
             }
         }
+
         System.out.println("O jogo terminou. Sua pontuação final foi: " + mecanicaDoJogo.getPontuacao() + " pontos");
         scanner.close();
         System.exit(1);

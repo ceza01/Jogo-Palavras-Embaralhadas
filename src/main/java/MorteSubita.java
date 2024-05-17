@@ -28,7 +28,7 @@ public class MorteSubita implements MecanicaDoJogo{
     public boolean verificarAcerto(String palavra) {
         if (palavra.equals(palavraAtual)) {
             pontuacao++;
-            if (pontuacao >=20){
+            if (pontuacao >=50){
                 jogoAcabou = true;
             } else {
                 proximaPalavra();

@@ -28,7 +28,7 @@ public class JogoComVidas implements MecanicaDoJogo{
     public boolean verificarAcerto(String palavra) {
         if (palavra.equals(palavraAtual)) {
             pontuacao++;
-            if (pontuacao >=10){
+            if (pontuacao >=20){
                 jogoAcabou = true;
             } else {
                 proximaPalavra();
