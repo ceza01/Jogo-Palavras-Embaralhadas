@@ -46,3 +46,6 @@ Deverá ser entregue:
 Testes de unidade para as classes de embaralhamento
 - O link para um video disponibilizado de forma aberta com a gravação de uma partida do seu
 jogo 
+
+## Vídeo do jogo em funcionamento
+![Demonstração](https://github.com/ceza01/Jogo-Palavras-Embaralhadas/blob/main/JogoFuncionamento.gif)
