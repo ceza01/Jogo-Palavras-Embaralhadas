@@ -48,4 +48,4 @@ Testes de unidade para as classes de embaralhamento
 jogo 
 
 ## Vídeo do jogo em funcionamento
-![Demonstração](https://github.com/ceza01/Jogo-Palavras-Embaralhadas/blob/main/JogoFuncionamento.gif)
+![Demonstração](https://github.com/ceza01/Jogo-Palavras-Embaralhadas/blob/main/VideoDemo.gif)
